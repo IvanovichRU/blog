@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación de Node.js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&family=Questrial&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root {
+        --bg: #2A363B;
+        --prim: #99B898;
+        --sec: #FECEAB;
+        --tert: #FF847C;
+        --accent: #E84A5F;
+    }
+    
+    body {
+        background-color: var(--bg);
+        margin: 0;
+        padding: 0 5em;
+    }
+
+    p {
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .header {
+        padding: 5em 10em;
+    }
+
+    .header h1 {
+        font-family: 'Questrial', sans-serif;
+        margin: 0;
+        color: var(--accent);
+    }
+
+    .header h2 {
+        font-family: 'Poiret One', sans-serif;
+        margin: 0;
+        color: var(--sec)
+    }
+    
+    .header p {
+        margin: 0;
+        color: var(--prim)
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10em;
+    }
+
+    .content h3 {
+        font-family: sans-serif;
+        color: var(--prim);
+    }
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        color: var(--accent);
+    }
+
+    a::selection {
+        color: var(--accent);
+    }
+
+    a:hover {
+        color: var(--tert);
+    }
+</style>
+<body>
+    <div class="header">
+        <h1>Organización de Archivos</h1>
+        <h2>Instalación de Node.js para Windows</h2>
+        <p>Lunes, 20 de Marzo de 2023</p>
+    </div>
+    <div class="content">
+        <h3>Descargar Instalador</h3>
+        <p>Visita <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>, da click en el botón del lado izquierdo que denota "XX.XX.X <b>LTS</b>".</p>
+        <div class="img-container">
+            <img width="720px" src="/img/instalar_nodejs_1.png" >
+        </div>
+        <p>Esto descargará el instalador para la versión más reciente y estable de Node.js</p>
+        <div class="img-container">
+            <img width="720px" src="/img/instalar_nodejs_2.png" >
+        </div>
+        <p>Ejecutamos el instalador y aceptamos/damos siguiente en cada paso hasta finalizar la instalación.</p>
+        <div class="img-container">
+            <img width="360px" src="/img/instalar_nodejs_3.png" >
+            <img width="360px" src="/img/instalar_nodejs_4.png" >
+        </div>
+        <p>
+            En cualquier consola de comandos escribe el comando <code>node -v</code>. Puedes buscar <code>cmd</code> o <code>powershell</code> en el menú de inicio de Windows y ejecutar cualquiera de las dos,
+            ambas consolas funcionan sin problema, aunque personalmente recomiendo instalar <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=es-mx&gl=mx&rtc=1">Windows Terminal</a>.
+        </p>
+        <p>Al ejecutar el comando mencionado, deberías ver algo similar a lo siguiente:</p>
+        <img width="720px" src="/img/instalar_nodejs_5.png" >
+        <p>Si obtuviste este resultado, 🎉 ¡Felicidades, Node.js está correctamente instalado en tu computadora! 🎉</p>
+    </div>
+</body>
+</html>
