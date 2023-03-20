@@ -7,15 +7,15 @@
     <title>Instalación de Node.js</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&family=Questrial&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&family=Questrial&family=Shrikhand&family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <style>
     :root {
-        --bg: #2A363B;
-        --prim: #99B898;
-        --sec: #FECEAB;
-        --tert: #FF847C;
-        --accent: #E84A5F;
+        --bg: #143642;
+        --prim: #0F8B8D;
+        --sec: #EC9A29;
+        --tert: #DAD2D8;
+        --accent: #A8201A;
     }
     
     body {
@@ -25,7 +25,7 @@
     }
 
     p {
-        color: white;
+        color: var(--tert);
         font-family: sans-serif;
     }
 
@@ -36,76 +36,147 @@
     .header h1 {
         font-family: 'Questrial', sans-serif;
         margin: 0;
-        color: var(--accent);
+        font-size: 50px;
+        color: var(--sec);
     }
 
     .header h2 {
-        font-family: 'Poiret One', sans-serif;
+        font-family: 'Questrial', sans-serif;
         margin: 0;
-        color: var(--sec)
+        color: var(--prim)
     }
     
     .header p {
         margin: 0;
-        color: var(--prim)
+        color: var(--tert)
     }
 
     .content {
         display: flex;
         flex-direction: column;
-        padding: 0 10em;
+        padding: 0 10em 10em 10em;
     }
 
     .content h3 {
         font-family: sans-serif;
-        color: var(--prim);
+        color: var(--sec);
+        margin: 0;
     }
 
+    .img-strip {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0.5em;
+    }
+    
     .img-container {
+        flex: 1;
         display: flex;
         justify-content: center;
     }
 
-    a {
-        color: var(--accent);
+    img {
+        max-height: 500px;
+        max-width: 100%;
+        object-fit: contain;
     }
 
-    a::selection {
-        color: var(--accent);
+    a {
+        color: var(--sec);
+    }
+
+    *::selection {
+        background-color: var(--accent);
     }
 
     a:hover {
-        color: var(--tert);
+        color: var(--accent);
+    }
+
+    code {
+        font-family: 'Fira Code', monospace;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 1px 3px;
+        border-radius: 5px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        body {
+            padding: 0 1em;
+        }
+
+        .header {
+            padding: 2em 1em;
+        }
+
+        .content {
+            padding: 0 1em;
+        }
     }
 </style>
 <body>
     <div class="header">
-        <h1>Organización de Archivos</h1>
-        <h2>Instalación de Node.js para Windows</h2>
+        <h1>Instalación de Node.js para Windows</h1>
+        <h2>Organización de Archivos</h2>
         <p>Lunes, 20 de Marzo de 2023</p>
     </div>
     <div class="content">
-        <h3>Descargar Instalador</h3>
-        <p>Visita <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>, da click en el botón del lado izquierdo que denota "XX.XX.X <b>LTS</b>".</p>
-        <div class="img-container">
-            <img width="720px" src="/img/instalar_nodejs_1.png" >
-        </div>
-        <p>Esto descargará el instalador para la versión más reciente y estable de Node.js</p>
-        <div class="img-container">
-            <img width="720px" src="/img/instalar_nodejs_2.png" >
-        </div>
-        <p>Ejecutamos el instalador y aceptamos/damos siguiente en cada paso hasta finalizar la instalación.</p>
-        <div class="img-container">
-            <img width="360px" src="/img/instalar_nodejs_3.png" >
-            <img width="360px" src="/img/instalar_nodejs_4.png" >
+        <h3>
+            Contexto
+        </h3>
+        <p>
+            En mi clase de la materia organización de archivos, se nos asignó a mi y a mis compañeros, el día sábado 18 de Marzo un <a href="/ucv/organizacion_de_archivos/practica1.html">programa sencillo</a>, se nos preguntó en qué lenguaje de programación
+            desearíamos hacerlo, entre las opciones estaban C#, C++, Java, PHP y JavaScript (Node.js), yo recomendé utilizar JavaScript con Node.js dado que creo es un lenguaje bastante sencillo
+            y fácil de adoptar por lo que llegamos a esta página un guía sencilla para instalar Node.js en Windows.
+        </p>
+        <h3>
+            Instalación
+        </h3>
+        <p>
+            Visita <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>, da click en el botón del lado izquierdo que denota "XX.XX.X <b>LTS</b>".
+            Es importante si es tu primera vez usando Node.js, asegurarse de instalar una versión <b>LTS</b> (Long Term Support) o Soporte a largo plazo en español.
+            Una versión LTS a grandes razgos indica que será una versión con muy pocos bugs, muy pocos errores y nos dará menos problemas en general.
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/instalar_nodejs_1.png" >
+            </div>
         </div>
         <p>
-            En cualquier consola de comandos escribe el comando <code>node -v</code>. Puedes buscar <code>cmd</code> o <code>powershell</code> en el menú de inicio de Windows y ejecutar cualquiera de las dos,
-            ambas consolas funcionan sin problema, aunque personalmente recomiendo instalar <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=es-mx&gl=mx&rtc=1">Windows Terminal</a>.
+            Esto descargará el instalador para Node.js, ejecutamos el programa que abrirá un diálogo de instalación, damos en siguiente o Next
+            en todas las pantallas, a menos que quieras cambiar alguna configuración pero recomiendo no alterar ninguna configuración si es tu primera
+            vez usando Node.js.
         </p>
-        <p>Al ejecutar el comando mencionado, deberías ver algo similar a lo siguiente:</p>
-        <img width="720px" src="/img/instalar_nodejs_5.png" >
-        <p>Si obtuviste este resultado, 🎉 ¡Felicidades, Node.js está correctamente instalado en tu computadora! 🎉</p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/instalar_nodejs_2.png" >
+            </div>
+        </div>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/instalar_nodejs_3.png" >
+            </div>
+            <div class="img-container">
+                <img src="/img/instalar_nodejs_4.png" >
+            </div>
+        </div>
+        <p>
+            En cualquier consola de comandos escribe el comando <code>node -v</code>. Puedes buscar <i>cmd</i> y ejecutar la aplicación "Command Prompt" o <i>powershell</i> y ejecutar la aplicación "Windows Powershell" en el menú de inicio de Windows,
+            ambas consolas funcionan sin problema, aunque personalmente recomiendo instalar <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=es-mx&gl=mx&rtc=1">Windows Terminal</a>.
+            Es una aplicación que permite abrir múltiples consolas entre las que tenga instalado en tu computadora como las dos anteriores mencionadas, aparte de tener la función de ser personalizable a un buen
+            grado para configurarla a tu gusto.
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="https://store-images.s-microsoft.com/image/apps.28865.13926773940052066.16e93a5b-b25f-4aaf-8a38-77375e237879.78e2aeac-6ede-4855-acb1-79a854b5556d?h=768" >
+            </div>
+        </div>
+        <p>Al ejecutar el comando mencionado, deberías ver algo similar a <code>v18.15.0</code></p>
+        <div class="img-container">
+            <img src="/img/instalar_nodejs_5.png" >
+        </div>
+        <p>🎉 ¡Felicidades, Node.js está correctamente instalado en tu computadora! 🎉</p>
     </div>
 </body>
 </html>
