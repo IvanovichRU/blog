@@ -1,18 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Práctica 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&family=Questrial&family=Shrikhand&family=Fira+Code&family=Fira+Sans&display=swap"
+        rel="stylesheet">
+    <link href="/css/blog.css" rel="stylesheet">
+    <link href="/prism.css" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Organización de archivos</h1>
-    <h2>Programa para escribir archivo ASCII</h2>
-    <div>
-        <h3>Crear archivo</h3>
-        <p>Dentro de cualquier carpeta de trabajo, cree un archivo con el nombre que quiera con la terminación ".js"</p>
-        <img src="/" >
+    <div class="header">
+        <h1>Práctica 1</h1>
+        <h2>Organización de Archivos</h2>
+        <p>Martes, 21 de Marzo de 2023</p>
+    </div>
+    <div class="content">
+        <h3>
+            Contexto
+        </h3>
+        <p>
+            Para la primer práctica la instrucción fue "Crear un archivo", como puntos extra sería escribir un mensaje
+            al archivo
+            al momento de crearlo. En Node.js esta tarea es bastante sencilla.
+        </p>
+        <h3>
+            Creación del código
+        </h3>
+        <p>
+            Crea una carpeta donde trabajarás con los códigos de las prácticas, dentro de él, crea un archivo con el
+            nombre que desees,
+            pero asegurate de ponerle una extensión ".js", por ejemplo <code>practica1.js</code>. Para trabajar con este
+            archivo, recomiendo
+            instalar <a href="https://code.visualstudio.com/download">Visual Studio Code</a>, un editor de código
+            versátil, personalizable y
+            bastante estable. Si tienes VS Code instalado, puede dar click derecho a tu archivo creado, luego en "abrir
+            con" y finalmente
+            "Visual Studio Code".
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/practica1_1.png">
+                <p>Abrir carpeta desde explorador de archivos</p>
+            </div>
+        </div>
+        <p>
+            De manera alternativa, puedes abrir VS Code y en el menú del programa (parte superior izquierda), en la
+            sección de "Archivo"
+            elije la opción abrir carpeta y encuentre su carpeta de trabajo, deberías ver en una barra del lado
+            izquierdo el nombre de tu archivo
+            si le das click lo abrirás en la ventana del editor, si visualizas la barra, puedes presionar la combinación
+            de teclas <code>Ctrl+b</code> o dar click en el
+            primer ícono en la barra a la orilla del lado izquierdo del programa.
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/practica1_2.png">
+                <p>Abrir carpeta desde VS Code</p>
+            </div>
+            <div class="img-container">
+                <img src="/img/practica1_3.png">
+                <p>Visualizamos el nombre de nuestro archivo</p>
+            </div>
+            <div class="img-container">
+                <img src="/img/practica1_4.png">
+                <p>Archivo abierto en el editor tras dar click izquierdo.</p>
+            </div>
+            <div class="img-container">
+                <img src="/img/practica1_5.png">
+                <p>Ícono para abrir el explorador de archivos en VS Code.</p>
+            </div>
+        </div>
+        <h3>Código Fuente</h3>
+        <p>
+            Una vez abierto nuestro archivo en VS Code, podemos comenzar con el código. Para poder realizar operaciones
+            con el sistema de archivos de nuestro
+            sistema operativo (temas que se mencionaron en clase), debemos utilizar una librería estándar incluida con
+            Node.js llamada <code>fs</code> (abreviatura
+            para <b>f</b>ile <b>s</b>ystem o sistema de archivos). Esta librería nos dará acceso a funcionalidades como
+            leer archivos, modificarlos, borrarlos, crearlos, etc.
+            En Node.js existen múltiples maneras de manejar librerías, pero iremos con la más común, la de <a
+                href="https://lenguajejs.com/automatizadores/introduccion/commonjs-vs-es-modules/">CommonJS</a>, si
+            gustas, puedes investigarlo más a fondo, aquí
+            lo veremos superficialmente, la primer línea de código es la siguiente:
+        </p>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div
+                style="display: flex; justify-content: center; background-color: #2d2d2d; width: fit-content; max-width: 100%; border-radius: 8px;">
+                <pre><code class="language-javascript">const fs = require("fs");</code></pre>
+            </div>
+        </div>
+        <p>
+            En la anterior línea de código están sucediendo dos cosas a grandes razgos:
+        <ul>
+            <li>
+                Creamos una variable <b>constante</b> mediante el uso de la palabra clave <code
+                    class="language-javascript">const</code> llamada <code class="language-javascript">fs</code>.
+                esta variable contendrá toda la funcionalidad de la librería del mismo nombre, accederemos a ella
+                mediante el uso de la notación de punto, por ejemplo: <code
+                    class="language-javascript">fs.funcionAleatoria()</code>.
+            </li>
+            <li>
+                Podemos acceder a estas funcionalidades de la librería gracias a la segunda acción que cumple la línea
+                de código, <code class="language-javascript">require("fs")</code>. La función <code
+                    class="language-javascript">require</code>,
+                la cual estamos llamando en este extracto de código, permite asignar todas las funcionalidades y
+                propiedades de una librería mediante el nombre que le pasemos como argumento, en este caso, <code
+                    class="language-javascript">"fs"</code>.
+            </li>
+        </ul>
+        </p>
+        <p>
+            Una herramienta muy útil de VS Code al usar JavaScript es su autocompletado, si estás trabajando con VS
+            Code, en la siguiente línea de código, experimenta escribiendo <code>fs.</code> y
+            mira las sugerencias y/o opciones de autocompletado que VS Code nos da, proporciona el nombre de la
+            propiedad o función además de dar información útil y una breve explicación del uso
+            de la opción o sugerencia, puedes navegar las opciones con las flechas arriba y abajo de tu teclado.
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/practica1_6.png">
+                <p>Autocompletado de VS Code</p>
+            </div>
+        </div>
+        <p>
+            Para nuestro programa utilizaremos la función <code class="language-javascript">writeFileSync()</code>. Si
+            escribimos esta función y abrimos sus paréntesis para llamarla, el autocompletado
+            de VS Code nos dirá los argumentos que espera esta función, es decir, los que deberemos pasarle dentro de
+            los paréntesis para que la función opere correctamente.
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/practica1_7.png">
+                <p>Detalles de la función <code>readFileSync</code></p>
+            </div>
+        </div>
+        <p>
+            Podemos ver que en primer lugar aparece <code class="language-javascript">file: fs.PathOrFileDescriptor</code>, esta notación es de otro lenguaje
+            basado en JavaScript llamado <a>TypeScript</a>,
+            básicamente nos indica de qué tipo es el dato que debemos pasarle en este espacio a la función, podríamos
+            investigar exactamente qué es <code>fs.PathOrFileDescriptor</code> pero puedo asegurarte
+            que incluye el tipo <code>string</code> que es una cadena en JavaScript. Para denotar una cadena podemos
+            utilizar las comillas dobles " ", las comillas simples ' ' o el "backtick" ` `:
+        </p>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div
+                style="display: flex; justify-content: center; background-color: #2d2d2d; width: fit-content; max-width: 100%; border-radius: 8px;">
+                <pre><code class="language-javascript">const cadenaConComillasDobles = "cadena1";
+const cadenaConComillasSimples = 'cadena2';
+const cadenaConBackticks = `cadena3`;</code></pre>
+            </div>
+        </div>
+        <p>
+            Recomiendo utilizar las comillas dobles o simples y dejar el backtick para más adelante en casos específicos
+            donde conviene su uso.
+            Entonces, sabemos que debemos pasarle una cadena, esta cadena será el nombre del archivo que crearemos, por
+            ahora podemos nombrarlo "archivo.txt".
+            La extensión txt en verdad no es necesario pero es convención nombrar archivos de texto plano con esta
+            extensión. Llevamos lo siguiente:
+        </p>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div
+                style="display: flex; justify-content: center; background-color: #2d2d2d; width: fit-content; max-width: 100%; border-radius: 8px;">
+                <pre><code class="language-javascript">const fs = require("fs");
+fs.writeFileSync("archivo.txt", )</code></pre>
+            </div>
+        </div>
+        <p>
+            Tras escribir la coma luego de nuestra cadena, VS Code nos dirá el siguiente argumento:
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/practica1_8.png">
+                <p>El siguiente argumento</p>
+            </div>
+        </div>
+        <p>
+            El siguiente argumento es <code class="language-javascript">data: string  | NodeJS.ArrayBufferView</code>, aquí explícitamente podemos ver que acepta <code>string</code>,
+            por lo que se entiende que debemos pasarle una cadena más, si lees los detalles del autocompletado se explica que este argumento son los datos que se
+            escribirán al archivo en su momento de creación, aquí es donde podemos pasarle el mensaje a escribir al momento de su creación. Escribe el mensaje que desees
+            yo escribiré "¡Hola, mundo!".
+        </p>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div
+                style="display: flex; justify-content: center; background-color: #2d2d2d; width: fit-content; max-width: 100%; border-radius: 8px;">
+                <pre><code class="language-javascript">const fs = require("fs");
+fs.writeFileSync("archivo.txt", "¡Hola, mundo!")</code></pre>
+            </div>
+        </div>
+        <p>
+            Si somos curiosos y escribimos una coma más luego del segundo argumento, veremos que se nos indica un argumento más, <code class="language-javascript">options?: fs.WriteFileOptions | undefined</code>
+            hay una pequeña diferencia de este argumento a los dos anteriores, ¿La notas...?
+            Justo antes de los dos puntos hay un signo de interrogación <code>?</code>, este signo de interrogación indica que este argumento es opcional y podemos decidir
+            no pasárselo a la función, esta operará sin problemas. 🎉¡Y listo!🎉, nuestro código está terminado, aunque no lo creas, es todo lo necesario para escribir un archivo con un mensaje dentro.
+        </p>
+        <h3>Ejecución del Código</h3>
+        <p>
+            Ahora, ¿Cómo lo ejecutamos?, es sencillo, si está usando VS Code podemos abrir una consola dentro del programa desde el menú del programa en la sección de "Terminal", damos click en la
+            opción "Nueva Terminal" o hacemos la combinación de teclas <code>Ctrl+Shift+ñ</code> y se abrirá una consola en la parte inferior de VS Code, esta consola ya debería encontrarse
+            en la carpeta de trabajo, puesto que es la carpeta que tenemos abierta en el editor.
+        </p>
+        <p>
+            Una vez abierta la consola basta con escribir <code>node practica1.js</code> en la consola y dar <code>Enter</code> para ejecutar el programa, sustituyendo <code>practica1.js</code> con el nombre que le hayas
+            puesto al archivo con tu código fuente. Tras dar Enter podremos ver que se creó nuestro archivo en la barra del lado izquierdo (el explorador de archivos de VS Code). Si le damos click
+            se abrirá y podremos ver el contenido que le pasamos a la función <code class="language-javascript">fs.writeFileSync()</code>
+        </p>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/practica1_9.png">
+                <p>Programa ejecutado</p>
+            </div>
+            <div class="img-container">
+                <img src="/img/practica1_10.png">
+                <p>Contenido del archivo creado</p>
+            </div>
+        </div>
+        <h3>🎉¡Práctica Terminada!🎉</h3>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="https://i.giphy.com/media/26tPplGWjN0xLybiU/giphy.webp">
+            </div>
+        </div>
     </div>
 </body>
+<script src="/prism.js"></script>
+
 </html>
