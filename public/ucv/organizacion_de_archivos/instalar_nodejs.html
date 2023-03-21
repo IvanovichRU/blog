@@ -7,114 +7,11 @@
     <title>Instalación de Node.js</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&family=Questrial&family=Shrikhand&family=Fira+Code&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&family=Questrial&family=Shrikhand&family=Fira+Code&family=Fira+Sans&display=swap"
+        rel="stylesheet">
+    <link href="/css/blog.css" rel="stylesheet" >
 </head>
-<style>
-    :root {
-        --bg: #143642;
-        --prim: #0F8B8D;
-        --sec: #EC9A29;
-        --tert: #DAD2D8;
-        --accent: #A8201A;
-    }
-    
-    body {
-        background-color: var(--bg);
-        margin: 0;
-        padding: 0 5em;
-    }
-
-    p {
-        color: var(--tert);
-        font-family: sans-serif;
-    }
-
-    .header {
-        padding: 5em 10em;
-    }
-
-    .header h1 {
-        font-family: 'Questrial', sans-serif;
-        margin: 0;
-        font-size: 50px;
-        color: var(--sec);
-    }
-
-    .header h2 {
-        font-family: 'Questrial', sans-serif;
-        margin: 0;
-        color: var(--prim)
-    }
-    
-    .header p {
-        margin: 0;
-        color: var(--tert)
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        padding: 0 10em 10em 10em;
-    }
-
-    .content h3 {
-        font-family: sans-serif;
-        color: var(--sec);
-        margin: 0;
-    }
-
-    .img-strip {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding: 0.5em;
-    }
-    
-    .img-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-    }
-
-    img {
-        max-height: 500px;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    a {
-        color: var(--sec);
-    }
-
-    *::selection {
-        background-color: var(--accent);
-    }
-
-    a:hover {
-        color: var(--accent);
-    }
-
-    code {
-        font-family: 'Fira Code', monospace;
-        background-color: rgba(0, 0, 0, 0.2);
-        padding: 1px 3px;
-        border-radius: 5px;
-    }
-
-    @media only screen and (max-width: 768px) {
-        body {
-            padding: 0 1em;
-        }
-
-        .header {
-            padding: 2em 1em;
-        }
-
-        .content {
-            padding: 0 1em;
-        }
-    }
-</style>
 <body>
     <div class="header">
         <h1>Instalación de Node.js para Windows</h1>
@@ -173,10 +70,17 @@
             </div>
         </div>
         <p>Al ejecutar el comando mencionado, deberías ver algo similar a <code>v18.15.0</code></p>
-        <div class="img-container">
-            <img src="/img/instalar_nodejs_5.png" >
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="/img/instalar_nodejs_5.png" >
+            </div>
         </div>
-        <p>🎉 ¡Felicidades, Node.js está correctamente instalado en tu computadora! 🎉</p>
+        <h3>🎉 ¡Felicidades, Node.js está correctamente instalado en tu computadora! 🎉</h3>
+        <div class="img-strip">
+            <div class="img-container">
+                <img src="https://media3.giphy.com/media/XreQmk7ETCak0/giphy.gif?cid=ecf05e47k1ygluif66vybn6umf3719cvh7tv20raroa3wl3a&rid=giphy.gif&ct=g" >
+            </div>
+        </div>
     </div>
 </body>
 </html>

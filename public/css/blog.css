@@ -1,0 +1,128 @@
+:root {
+    --bg: #143642;
+    --prim: #0F8B8D;
+    --sec: #EC9A29;
+    --tert: #DAD2D8;
+    --accent: #A8201A;
+}
+
+body {
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0 5em;
+}
+
+p {
+    color: var(--tert);
+    font-family: 'Fira Sans', sans-serif;
+    text-align: justify;
+}
+
+li {
+    color: var(--tert);
+    font-family: 'Fira Sans', sans-serif;
+    text-align: justify;
+}
+
+.header {
+    padding: 5em 10em;
+}
+
+.header h1 {
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
+    font-size: 50px;
+    color: var(--sec);
+}
+
+.header h2 {
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
+    color: var(--prim)
+}
+
+.header p {
+    margin: 0;
+    color: var(--tert)
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10em 10em 10em;
+}
+
+.content h3 {
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--sec);
+    margin: 0;
+}
+
+.img-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5em;
+    gap: 1em;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img-container p {
+    margin: 10px 0;
+    text-align: right;
+    font-size: small;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+img {
+    max-height: 500px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+a {
+    color: var(--sec);
+}
+
+*::selection {
+    background-color: var(--accent);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1px 3px;
+    border-radius: 5px;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 0 1em;
+    }
+
+    .header {
+        padding: 2em 1em;
+    }
+
+    .content {
+        padding: 0 1em;
+    }
+
+    pre > code {
+        font-size: small !important;
+    }
+}
